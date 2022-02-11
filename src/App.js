@@ -11,7 +11,7 @@ export default class App extends Component {
   };
 
   formSubmitHandler = name => {
-    console.log(name);
+    this.setState(({ contacts }) => ({ contacts: [name, ...contacts] }));
   };
 
   render() {
