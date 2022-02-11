@@ -11,16 +11,20 @@ export default class Form extends Component {
   };
 
   handleChange = e => {
-    // this.setState({ [event.currentTarget.name]: event.currentTarget.value });
     const { name, value } = e.currentTarget;
     this.setState({ [name]: value });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    console.log(this.state);
   };
 
   render() {
     return (
       <section className="phonebook">
         {/* Form */}
-        <form className="form">
+        <form className="form" onSubmit={this.handleSubmit}>
           <h1 className="title">Phonebook</h1>
           <label className="label">
             Name
