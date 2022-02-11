@@ -10,10 +10,14 @@ export default class App extends Component {
     contacts: [],
   };
 
+  formSubmitHandler = name => {
+    console.log(name);
+  };
+
   render() {
     return (
       <div className="App">
-        <Form />
+        <Form name={this.formSubmitHandler} />
         {/* Contacts */}
         <div className="contacts">
           <h1 className="title">Contacts</h1>
