@@ -6,7 +6,6 @@ export default class Form extends Component {
   static propTypes = {};
 
   state = {
-    contacts: [],
     name: '',
   };
 
@@ -42,13 +41,6 @@ export default class Form extends Component {
             Add contact
           </button>
         </form>
-        {/* Contacts */}
-        <div className="contacts">
-          <h1 className="title">Contacts</h1>
-          <ul className="contacts-list">
-            <li className="item"></li>
-          </ul>
-        </div>
       </section>
     );
   }
