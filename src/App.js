@@ -22,7 +22,11 @@ export default class App extends Component {
         <div className="contacts">
           <h1 className="title">Contacts</h1>
           <ul className="contacts-list">
-            <li className="item"></li>
+            {this.state.contacts.map(contact => (
+              <li key={contact.name} className="item">
+                {contact.name}
+              </li>
+            ))}
           </ul>
         </div>
       </div>
