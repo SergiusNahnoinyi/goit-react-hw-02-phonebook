@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Form from './components/Form';
+import { nanoid } from 'nanoid';
 
 export default class App extends Component {
   static defaultProps = {};
@@ -11,7 +12,10 @@ export default class App extends Component {
   };
 
   formSubmitHandler = name => {
-    this.setState(({ contacts }) => ({ contacts: [...contacts, name] }));
+    const newContact = { id: nanoid(), name };
+    this.setState(({ contacts }) => ({
+      contacts: [...contacts, newContact],
+    }));
   };
 
   render() {
@@ -23,7 +27,7 @@ export default class App extends Component {
           <h1 className="title">Contacts</h1>
           <ul className="contacts-list">
             {this.state.contacts.map(contact => (
-              <li key={contact.name} className="item">
+              <li key={contact.id} className="item">
                 {contact.name}
               </li>
             ))}
