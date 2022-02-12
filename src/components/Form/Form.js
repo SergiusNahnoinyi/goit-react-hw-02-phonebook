@@ -18,12 +18,13 @@ export default class Form extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props.name(this.state.name);
+    const id = nanoid();
+    this.props.formData({ ...this.state, id });
     this.reset();
   };
 
   reset = () => {
-    this.setState({ name: '' });
+    this.setState({ name: '', number: '' });
   };
 
   nameInputId = nanoid();
