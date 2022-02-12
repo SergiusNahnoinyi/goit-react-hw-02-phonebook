@@ -11,9 +11,17 @@ export default class App extends Component {
   };
 
   formSubmitHandler = formData => {
-    this.setState(({ contacts }) => ({
-      contacts: [...contacts, formData],
-    }));
+    const { contacts } = this.state;
+    const similarContact = contacts.find(
+      ({ name }) => formData.name.toLowerCase() === name.toLowerCase(),
+    );
+
+    if (similarContact) {
+      return alert(`${similarContact.name} is already in your list`);
+    } else
+      this.setState(({ contacts }) => ({
+        contacts: [...contacts, formData],
+      }));
   };
 
   changeFilter = e => {
