@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Form from './components/Form';
-import { nanoid } from 'nanoid';
 
 export default class App extends Component {
   static defaultProps = {};
@@ -31,8 +30,6 @@ export default class App extends Component {
     );
   };
 
-  InputId = nanoid();
-
   render() {
     const { filter } = this.state;
     const filtredContacts = this.getFiltredContacts();
@@ -43,19 +40,18 @@ export default class App extends Component {
         {/* Contacts */}
         <div className="contacts">
           <h1 className="title">Contacts</h1>
-          <label className="label" htmlFor={this.InputId}>
+          <label className="label">
             Find contact by name
+            <input
+              type="text"
+              name="name"
+              value={filter}
+              onChange={this.changeFilter}
+              pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+              title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+              required
+            />
           </label>
-          <input
-            type="text"
-            name="name"
-            id={this.InputId}
-            value={filter}
-            onChange={this.changeFilter}
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-            required
-          />
           <ul className="contacts-list">
             {filtredContacts.map(contact => (
               <li key={contact.id} className="item">
