@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
 
-export default function ContactsList({ contacts }) {
+export default function ContactsList({ contacts, onDelete }) {
   return (
     <ul className="contacts-list">
       {contacts.map(contact => (
         <li key={contact.id} className="item">
           {contact.name}: {contact.number}
+          <button onClick={() => onDelete(contact.id)}>Delete</button>
         </li>
       ))}
     </ul>
@@ -13,6 +14,7 @@ export default function ContactsList({ contacts }) {
 }
 
 ContactsList.propTypes = {
+  onDelete: PropTypes.func.isRequired,
   contacts: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
