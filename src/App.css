@@ -1,9 +1,8 @@
 .phonebook {
   min-width: 320px;
   max-width: 480px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-top: 100px;
+  padding-left: 25px;
+  padding-right: 25px;
   margin-right: auto;
   margin-left: auto;
   text-align: center;
@@ -15,4 +14,8 @@
 
 .title {
   margin-bottom: 20px;
+}
+
+.title:first-child {
+  margin-top: 20px;
 }
