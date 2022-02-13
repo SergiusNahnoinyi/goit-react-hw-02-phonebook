@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './App.css';
 
 import ContactsForm from './components/ContactsForm';
 import Filter from './components/Filter';
@@ -48,7 +49,7 @@ export default class App extends Component {
     const filtredContacts = this.getFiltredContacts();
 
     return (
-      <section className="Phonebook">
+      <section className="phonebook">
         <h1 className="title">Phonebook</h1>
         <ContactsForm formData={this.formSubmitHandler} />
 
