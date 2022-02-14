@@ -25,6 +25,11 @@ body {
   background-color: var(--primary-background-color);
 }
 
+main {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 h1,
 h2,
 ul {
@@ -32,8 +37,4 @@ ul {
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
-}
-
-#root {
-  margin-top: 100px;
 }
